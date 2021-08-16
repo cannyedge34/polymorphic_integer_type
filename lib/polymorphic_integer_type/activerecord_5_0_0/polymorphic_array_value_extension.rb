@@ -10,7 +10,7 @@ module PolymorphicIntegerType
     # end
 
     def type_to_ids_mapping
-      association = @associated_table.send(:association)
+      association = @associated_table.send(:reflection)
       name = association.name
       default_hash = Hash.new { |hsh, key| hsh[key] = [] }
       values.each_with_object(default_hash) do |value, hash|
